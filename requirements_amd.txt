@@ -1,0 +1,17 @@
+# AMD显卡 / CPU训练的依赖（Windows）
+# 使用DirectML后端支持AMD显卡
+
+# PyTorch with DirectML (AMD GPU support on Windows)
+# 注意：需要先安装 torch-directml
+torch-directml
+torchvision
+
+# 其他依赖
+accelerate
+einops
+ema-pytorch>=0.4.2
+numpy
+pillow
+pytorch-fid
+scipy
+tqdm

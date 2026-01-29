@@ -1,0 +1,33 @@
+# DDPM Training Configuration
+
+# Model configuration
+model:
+  dim: 64
+  dim_mults: [1, 2, 4, 8]
+  flash_attn: false
+
+# Diffusion model configuration
+diffusion:
+  image_size: 128
+  timesteps: 1000
+  sampling_timesteps: 250
+
+# Training configuration
+training:
+  data_path: './data/images'
+  batch_size: 16
+  learning_rate: 8e-5
+  train_steps: 700000
+  gradient_accumulate_every: 2
+  ema_decay: 0.995
+  amp: true
+  calculate_fid: true
+  save_every: 1000
+  results_folder: './results'
+
+# Dataset configuration
+dataset:
+  # Supported datasets: cifar10, celeba, custom
+  name: 'custom'
+  # If using custom, specify image folder path
+  path: './data/images'
